@@ -16,30 +16,5 @@ namespace R6Stat_Sharp.Extensions
         private const string _plat = "";
         private const string _diamond = "";
         private const string _champion = "";
-
-        public static Color GetRankColor(this IRankedData data)
-        {
-            switch (data.RankText)
-            {
-                default:
-                    break;
-            }
-        }
-
-        public static Color GetMaxRankColor(this IRankedData data )
-        {
-
-        }
-
-        private static Color GetColor(string rankName )
-        {
-            switch (rankName)
-            {
-                case "Copper":
-                    return new Color().hex
-                default:
-                    break;
-            }
-        }
     }
 }

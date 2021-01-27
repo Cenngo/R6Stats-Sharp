@@ -15,7 +15,7 @@ namespace R6Stat_Sharp
 {
     public class R6StatsClient
     {
-        private const string _baseUrl = "https://api2.r6stats.com/";
+        private const string _baseUrl = "https://api2.r6stats.com/public-api/";
         private readonly HttpClient _httpClient;
 
         private readonly string _key;
@@ -34,7 +34,7 @@ namespace R6Stat_Sharp
         public async Task<GenericResponse> GetGeneric(string username, Platform platform )
         {
             var endpoint = Endpoints.GetGeneric(username, platform);
-            var response = await _httpClient.GetAsync("public-api" + endpoint);
+            var response = await _httpClient.GetAsync(endpoint);
             Console.WriteLine(endpoint);
             Console.WriteLine(response.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             using(var sr = new StreamReader(await response.Content.ReadAsStreamAsync()))
