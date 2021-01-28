@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace R6Stat_Sharp.Stats
+﻿namespace R6Stat_Sharp.Stats
 {
     public interface IPlayerStat
     {

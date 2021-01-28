@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace R6Stat_Sharp.Enums
 {
+    /// <summary>
+    /// Represents a geographical region 
+    /// </summary>
     public enum Region
     {
         NCSA,

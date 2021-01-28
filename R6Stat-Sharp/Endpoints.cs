@@ -1,8 +1,4 @@
 ﻿using R6Stat_Sharp.Enums;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Text;
 
 namespace R6Stat_Sharp
 {

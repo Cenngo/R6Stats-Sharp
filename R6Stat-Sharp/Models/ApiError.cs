@@ -1,0 +1,22 @@
+﻿using Newtonsoft.Json;
+
+namespace R6Stat_Sharp.Models
+{
+    /// <summary>
+    /// Represents an API Error thrown by the <see cref="https://r6stats.com/"/> API after a bad request
+    /// </summary>
+    public class ApiError
+    {
+        /// <summary>
+        /// Status code of the error
+        /// </summary>
+        [JsonProperty("status")]
+        public string Status { get; internal set; }
+
+        /// <summary>
+        /// Description of the error
+        /// </summary>
+        [JsonProperty("error")]
+        public string Error { get; internal set; }
+    }
+}

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace R6Stat_Sharp
+﻿namespace R6Stat_Sharp
 {
     public class R6StatsClientConfig
     {
-        public string ApiKey { get; }
+        public string ApiKey { get; set; }
 
-        public R6StatsClientConfig(string APIKey )
+        public R6StatsClientConfig ( )
         {
-            ApiKey = APIKey;
         }
     }
 }

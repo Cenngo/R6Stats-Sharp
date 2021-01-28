@@ -1,12 +1,16 @@
 ﻿using R6Stat_Sharp.Stats;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace R6Stat_Sharp.Response
 {
+    /// <summary>
+    /// API response containing statistics for each weapon used by a player
+    /// </summary>
     public interface IWeaponResponse
     {
+        /// <summary>
+        /// Collection of stats for different weapons
+        /// </summary>
         IReadOnlyList<WeaponStat> Weapons { get; }
     }
 }

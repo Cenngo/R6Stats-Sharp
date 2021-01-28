@@ -1,15 +1,20 @@
 ﻿using Newtonsoft.Json;
 using R6Stat_Sharp.Stats;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace R6Stat_Sharp.Response
 {
+    /// <summary>
+    /// Contains stats for different weapon categories
+    /// </summary>
     public class WeaponCategoryResponse : BaseResponse, IWeaponCategoryResponse
     {
         [JsonProperty("categories")]
         internal List<WeaponCategoryStat> _weaponCategories;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
         [JsonIgnore]
         public IReadOnlyList<WeaponCategoryStat> WeaponCategories => _weaponCategories;
     }

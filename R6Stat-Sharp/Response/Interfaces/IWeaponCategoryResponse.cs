@@ -1,12 +1,16 @@
 ﻿using R6Stat_Sharp.Stats;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace R6Stat_Sharp.Response
 {
+    /// <summary>
+    /// API response containing stats for each weapon category
+    /// </summary>
     public interface IWeaponCategoryResponse
     {
+        /// <summary>
+        /// Stats for every weapon category
+        /// </summary>
         public IReadOnlyList<WeaponCategoryStat> WeaponCategories { get; }
     }
 }
