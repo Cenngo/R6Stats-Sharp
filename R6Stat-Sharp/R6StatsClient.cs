@@ -5,9 +5,11 @@ using R6Stat_Sharp.Response;
 using R6Stat_Sharp.Stats;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Config = R6Stat_Sharp.R6StatsClientConfig;
 
@@ -16,7 +18,9 @@ namespace R6Stat_Sharp
     public class R6StatsClient
     {
         private const string _baseUrl = "https://api2.r6stats.com/public-api/";
+
         private readonly HttpClient _httpClient;
+        private readonly ImmutableDictionary<string, IEnumerable<string>> _headers;
 
         private readonly string _key;
 
@@ -24,11 +28,23 @@ namespace R6Stat_Sharp
         {
             _key = config.ApiKey;
 
+            if (string.IsNullOrEmpty(_key))
+                throw new ArgumentException("API key not found.");
+
             _httpClient = new HttpClient()
             {
                 BaseAddress = new Uri(_baseUrl)
             };
-            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _key);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _key);
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        public R6StatsClient( Config config, IDictionary<string, IEnumerable<string>> headers) : this(config)
+        {
+            _headers = headers.ToImmutableDictionary();
+
+            foreach (var header in _headers)
+                _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
         }
 
         public async Task<GenericResponse> GetGenericStats ( string username, Platform platform ) =>

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using R6Stat_Sharp.Models;
 using R6Stat_Sharp.Stats;
 using System.Collections.Generic;
 

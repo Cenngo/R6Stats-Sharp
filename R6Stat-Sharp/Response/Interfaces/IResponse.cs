@@ -4,8 +4,12 @@ using System;
 namespace R6Stat_Sharp.Models
 {
     /// <summary>
-    /// Represents an API response from the R6Stats <see cref="https://r6stats.com/"/> API
+    /// Represents an API response from the <see href="https://r6stats.com/">R6Stats API</see>
     /// </summary>
+    /// <remarks>
+    /// Every API request returns an <see cref="IResponse"/> with the exception of <see cref="R6StatsClient.GetLeaderboard(Region)"/>, which returns a collection
+    /// of <see cref="IResponse"/> for every player in the leaderboard.
+    /// </remarks>
     public interface IResponse
     {
         /// <summary>
