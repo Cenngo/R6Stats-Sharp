@@ -85,6 +85,7 @@ namespace R6Stat_Sharp
                 return new APIResponse<T>(error.Status, error.Error);
             }
             var payload = JsonConvert.DeserializeObject<T>(content, settings);
+
             return new APIResponse<T>(response.StatusCode.ToString(), payload);
         }
     }
