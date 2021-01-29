@@ -68,7 +68,7 @@ namespace R6Stat_Sharp
         /// <param name="username">Username to be parsed</param>
         /// <param name="platform">Platform the username belongs to</param>
         /// <returns>Path to send the GET request</returns>
-        public static string GetLeaderboard ( Region region = Region.ALL ) =>
-            _leaderboardBase + region.ToString().ToLower();
+        public static string GetLeaderboard ( Platform platform, Region region = Region.ALL ) =>
+            _leaderboardBase + $"{platform.ToString().ToLower()}/{region.ToString().ToLower()}";
     }
 }
