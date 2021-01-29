@@ -5,6 +5,6 @@ namespace R6Stat_Sharp.Stats
     public class WeaponStat : WeaponCategoryStat
     {
         [JsonProperty("weapon")]
-        public string Weapon { get; internal set; }
+        public string Weapon { get; private set; }
     }
 }

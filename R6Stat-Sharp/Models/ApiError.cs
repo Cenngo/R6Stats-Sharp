@@ -11,12 +11,12 @@ namespace R6Stat_Sharp.Models
         /// Status code of the error
         /// </summary>
         [JsonProperty("status")]
-        public string Status { get; internal set; }
+        public string Status { get; private set; }
 
         /// <summary>
         /// Description of the error
         /// </summary>
         [JsonProperty("error")]
-        public string Error { get; internal set; }
+        public string Error { get; private set; }
     }
 }

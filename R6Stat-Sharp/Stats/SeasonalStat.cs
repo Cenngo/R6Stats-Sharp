@@ -8,22 +8,22 @@ namespace R6Stat_Sharp.Stats
     public class SeasonalStat : ISeasonalStat
     {
         [JsonProperty("ncsa")]
-        public string Name { get; internal set; }
+        public string Name { get; private set; }
 
         [JsonProperty("ncsa")]
-        internal string _startDate;
+        private string _startDate;
 
         [JsonIgnore]
         public DateTime StartDate => DateTime.Parse(_startDate);
 
         [JsonProperty("ncsa")]
-        internal string _endDate;
+        private string _endDate;
 
         [JsonIgnore]
         public DateTime EndDate => DateTime.Parse(_endDate);
 
         [JsonProperty("ncsa")]
-        internal List<RegionStat> _regions;
+        private List<RegionStat> _regions;
 
         [JsonIgnore]
         public IReadOnlyList<RegionStat> Regions => _regions;
@@ -32,19 +32,19 @@ namespace R6Stat_Sharp.Stats
     public class Regions
     {
         [JsonProperty("ncsa")]
-        internal List<RegionStat> _ncsa;
+        private List<RegionStat> _ncsa;
 
         [JsonIgnore]
         public IReadOnlyList<RegionStat> NCSA => _ncsa;
 
         [JsonProperty("emea")]
-        internal List<RegionStat> _emea;
+        private List<RegionStat> _emea;
 
         [JsonIgnore]
         public IReadOnlyList<RegionStat> EMEA => _emea;
 
         [JsonProperty("apac")]
-        internal List<RegionStat> _apac;
+        private List<RegionStat> _apac;
 
         [JsonIgnore]
         public IReadOnlyList<RegionStat> APAC => _apac;
@@ -53,82 +53,82 @@ namespace R6Stat_Sharp.Stats
     public class RegionStat : IRankedData, IPlayerStat
     {
         [JsonProperty("region")]
-        internal string _region;
+        private string _region;
 
         [JsonIgnore]
         public Region Region => Enum.Parse<Region>(_region, true);
 
         [JsonProperty("abandons")]
-        public int Abandons { get; internal set; }
+        public int Abandons { get; private set; }
 
         [JsonProperty("losses")]
-        public int Losses { get; internal set; }
+        public int Losses { get; private set; }
 
         [JsonProperty("max_mmr")]
-        public int MaxMMR { get; internal set; }
+        public int MaxMMR { get; private set; }
 
         [JsonProperty("max_rank")]
-        public int MaxRank { get; internal set; }
+        public int MaxRank { get; private set; }
 
         [JsonProperty("mmr")]
-        public int MMR { get; internal set; }
+        public int MMR { get; private set; }
 
         [JsonProperty("next_rank_mmr")]
-        public int NextRankMMR { get; internal set; }
+        public int NextRankMMR { get; private set; }
 
         [JsonProperty("prev_rank_mmr")]
-        public int PrevRankMMR { get; internal set; }
+        public int PrevRankMMR { get; private set; }
 
         [JsonProperty("rank")]
-        public int Rank { get; internal set; }
+        public int Rank { get; private set; }
 
         [JsonProperty("skill_mean")]
-        public double SkillMean { get; internal set; }
+        public double SkillMean { get; private set; }
 
         [JsonProperty("skill_standard_deviation")]
-        public double SkillStandartDeviation { get; internal set; }
+        public double SkillStandartDeviation { get; private set; }
 
         [JsonProperty("created_for_date")]
-        internal string _createdForDate;
+        private string _createdForDate;
 
         [JsonIgnore]
         public DateTime CreatedForDate => DateTime.Parse(_createdForDate);
 
         [JsonProperty("wins")]
-        public int Wins { get; internal set; }
+        public int Wins { get; private set; }
 
         [JsonProperty("kills")]
-        public int Kills { get; internal set; }
+        public int Kills { get; private set; }
 
         [JsonProperty("deaths")]
-        public int Deaths { get; internal set; }
+        public int Deaths { get; private set; }
 
         [JsonProperty("last_match_mmr_change")]
-        public int LastMMRChange { get; internal set; }
+        public int LastMMRChange { get; private set; }
 
         [JsonProperty("last_match_skill_mean_change")]
-        public double LastSkillMeanChange { get; internal set; }
+        public double LastSkillMeanChange { get; private set; }
 
         [JsonProperty("last_match_skill_standard_deviation_change")]
-        public double LastSkillStandartDeviationChange { get; internal set; }
+        public double LastSkillStandartDeviationChange { get; private set; }
 
         [JsonProperty("last_match_result")]
-        public int LastMatchResult { get; internal set; }
+        public int LastMatchResult { get; private set; }
 
         [JsonProperty("champions_rank_position")]
-        public int ChampionsPosition { get; internal set; }
+        public int ChampionsPosition { get; private set; }
 
         [JsonProperty("max_rank_text")]
-        public string MaxRankText { get; internal set; }
+        public string MaxRankText { get; private set; }
 
         [JsonProperty("max_rank_image")]
-        public string MaxRankImg { get; internal set; }
+        public string MaxRankImg { get; private set; }
 
         [JsonProperty("rank_text")]
-        public string RankText { get; internal set; }
+        public string RankText { get; private set; }
 
         [JsonProperty("rank_image")]
-        public string RankImg { get; internal set; }
+        public string RankImg { get; private set; }
 
         [JsonIgnore]
         public double KD => Kills / Deaths;

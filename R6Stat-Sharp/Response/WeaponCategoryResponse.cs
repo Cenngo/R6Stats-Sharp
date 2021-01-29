@@ -10,7 +10,7 @@ namespace R6Stat_Sharp.Response
     public class WeaponCategoryResponse : BaseResponse, IWeaponCategoryResponse
     {
         [JsonProperty("categories")]
-        internal List<WeaponCategoryStat> _weaponCategories;
+        private List<WeaponCategoryStat> _weaponCategories;
 
         /// <summary>
         /// <inheritdoc/>

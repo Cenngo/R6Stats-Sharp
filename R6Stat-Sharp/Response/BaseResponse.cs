@@ -15,10 +15,10 @@ namespace R6Stat_Sharp.Response
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("username")]
-        public string Username { get; internal set; }
+        public string Username { get; private set; }
 
         [JsonProperty("platform")]
-        internal string _platform { get; set; }
+        private string _platform;
 
         /// <summary>
         /// <inheritdoc/>
@@ -30,28 +30,28 @@ namespace R6Stat_Sharp.Response
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("ubisoft_id")]
-        public string UbisoftID { get; internal set; }
+        public string UbisoftID { get; private set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("uplay_id")]
-        public string UplayID { get; internal set; }
+        public string UplayID { get; private set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("avatar_url_146")]
-        public string Avatar146 { get; internal set; }
+        public string Avatar146 { get; private set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("avatar_url_256")]
-        public string Avatar256 { get; internal set; }
+        public string Avatar256 { get; private set; }
 
         [JsonProperty("last_updated")]
-        internal string _lastUpdated { get; set; }
+        private string _lastUpdated { get; set; }
 
         /// <summary>
         /// <inheritdoc/>

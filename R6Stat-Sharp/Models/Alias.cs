@@ -13,10 +13,10 @@ namespace R6Stat_Sharp.Models
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("username")]
-        public string Username { get; internal set; }
+        public string Username { get; private set; }
 
         [JsonProperty("last_seen_at")]
-        internal string _lastSeenAt;
+        private string _lastSeenAt;
 
         /// <summary>
         /// The last use date for the given alias

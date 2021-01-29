@@ -18,12 +18,13 @@ namespace R6Stat_Sharp.Response
     {
         private List<LeaderboardSlot> _leaderboard;
 
-        public Leaderboard ( )
+        internal Leaderboard ( )
         {
             _leaderboard = new List<LeaderboardSlot>();
         }
 
-        public Leaderboard( IEnumerable<LeaderboardSlot> leaderboard )
+        [JsonConstructor]
+        internal Leaderboard( IEnumerable<LeaderboardSlot> leaderboard )
         {
             _leaderboard = leaderboard.ToList();
         }

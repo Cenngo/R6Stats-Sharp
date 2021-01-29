@@ -6,22 +6,22 @@ namespace R6Stat_Sharp.Stats
     public class GamemodeStat : IGamemodeStat
     {
         [JsonProperty("best_score")]
-        public int BestScore { get; internal set; }
+        public int BestScore { get; private set; }
 
         [JsonProperty("games_played")]
-        public int GamesPlayed { get; internal set; }
+        public int GamesPlayed { get; private set; }
 
         [JsonProperty("losses")]
-        public int Losses { get; internal set; }
+        public int Losses { get; private set; }
 
         [JsonProperty("playtime")]
         public long _playTime;
         public TimeSpan PlayTime => TimeSpan.FromSeconds(_playTime);
 
         [JsonProperty("wins")]
-        public int Wins { get; internal set; }
+        public int Wins { get; private set; }
 
         [JsonProperty("wl")]
-        public double WinLose { get; internal set; }
+        public double WinLose { get; private set; }
     }
 }

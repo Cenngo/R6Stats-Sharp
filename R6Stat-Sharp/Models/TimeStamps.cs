@@ -9,7 +9,7 @@ namespace R6Stat_Sharp.Response
     public class TimeStamps
     {
         [JsonProperty("created")]
-        internal string _created;
+        private string _created;
 
         /// <summary>
         /// Date the object was created
@@ -18,7 +18,7 @@ namespace R6Stat_Sharp.Response
         public DateTime Created => DateTime.Parse(_created);
 
         [JsonProperty("last_updated")]
-        internal string _lastUpdated;
+        private string _lastUpdated;
 
         /// <summary>
         /// Date the object was last updated

@@ -12,7 +12,7 @@ namespace R6Stat_Sharp.Response
     public class SeasonalResponse : BaseResponse, ISeasonalResponse
     {
         [JsonProperty("seasons")]
-        internal Dictionary<string, SeasonalStat> _seasonalStats;
+        private Dictionary<string, SeasonalStat> _seasonalStats;
 
         /// <summary>
         /// <inheritdoc/>

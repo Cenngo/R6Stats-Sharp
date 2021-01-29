@@ -12,7 +12,7 @@ namespace R6Stat_Sharp.Response
     public class GenericResponse : BaseResponse, IGenericResponse
     {
         [JsonProperty("aliases")]
-        internal List<Alias> _aliases;
+        private List<Alias> _aliases;
 
         /// <summary>
         /// <inheritdoc/>
@@ -24,18 +24,18 @@ namespace R6Stat_Sharp.Response
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("progression")]
-        public PlayerProgression PlayerProgression { get; internal set; }
+        public PlayerProgression PlayerProgression { get; private set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("stats")]
-        public GenericResponseStats Stats { get; internal set; }
+        public GenericResponseStats Stats { get; private set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonProperty("timestamps")]
-        public TimeStamps TimeStamps { get; internal set; }
+        public TimeStamps TimeStamps { get; private set; }
     }
 }

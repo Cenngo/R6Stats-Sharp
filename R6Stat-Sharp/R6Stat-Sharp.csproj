@@ -10,6 +10,7 @@
     <PackageProjectUrl>https://github.com/Cenngo/R6Stats-Sharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Cenngo/R6Stats-Sharp</RepositoryUrl>
     <PackageTags>Rainbow6 Api R6Stats</PackageTags>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

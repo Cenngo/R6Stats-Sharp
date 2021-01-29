@@ -10,7 +10,7 @@ namespace R6Stat_Sharp.Response
     public class OperatorResponse : BaseResponse, IOperatorResponse
     {
         [JsonProperty("operators")]
-        internal List<OperatorStat> _operators;
+        private List<OperatorStat> _operators;
 
         /// <summary>
         /// <inheritdoc/>
