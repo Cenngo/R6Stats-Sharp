@@ -7,7 +7,7 @@ namespace R6Stat_Sharp.Response
     /// <summary>
     /// API response containing seasonal game stats
     /// </summary>
-    public interface ISeasonalResponse : IResponse
+    public interface ISeasonalResponse : IStat
     {
         /// <summary>
         /// Stats for every season, keyed with their respective name

@@ -7,7 +7,7 @@ namespace R6Stat_Sharp.Response
     /// <summary>
     /// API response containing stats for each weapon category
     /// </summary>
-    public interface IWeaponCategoryResponse : IResponse
+    public interface IWeaponCategoryResponse : IStat
     {
         /// <summary>
         /// Stats for every weapon category

@@ -2,6 +2,7 @@
 using R6Stat_Sharp.Models;
 using R6Stat_Sharp.Stats;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace R6Stat_Sharp.Response
 {
@@ -18,5 +19,7 @@ namespace R6Stat_Sharp.Response
         /// </summary>
         [JsonIgnore]
         public IReadOnlyDictionary<string, SeasonalStat> SeasonalStats => _seasonalStats;
+
+        public SeasonalStat CurrentRankedData => _seasonalStats.Values.ElementAt(0);
     }
 }

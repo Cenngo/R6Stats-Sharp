@@ -9,7 +9,7 @@ namespace R6Stat_Sharp.Response
     /// <summary>
     /// Base response class for parsing API Responses
     /// </summary>
-    public abstract class BaseResponse : IResponse, IAlias
+    public abstract class BaseResponse : IStat, IAlias, IPayload
     {
         /// <summary>
         /// <inheritdoc/>

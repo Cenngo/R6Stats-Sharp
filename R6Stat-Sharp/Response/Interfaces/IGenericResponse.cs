@@ -7,7 +7,7 @@ namespace R6Stat_Sharp.Response.Interfaces
     /// <summary>
     /// API response containing the essential information about a player
     /// </summary>
-    public interface IGenericResponse : IResponse
+    public interface IGenericResponse : IStat
     {
         /// <summary>
         /// Previous aliases used by the player

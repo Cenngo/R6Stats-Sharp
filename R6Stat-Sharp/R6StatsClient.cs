@@ -2,6 +2,7 @@
 using R6Stat_Sharp.Enums;
 using R6Stat_Sharp.Models;
 using R6Stat_Sharp.Response;
+using R6Stat_Sharp.Response.Interfaces;
 using R6Stat_Sharp.Stats;
 using System;
 using System.Collections.Generic;
@@ -47,31 +48,31 @@ namespace R6Stat_Sharp
                 _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
         }
 
-        public async Task<GenericResponse> GetGenericStats ( string username, Platform platform ) =>
+        public async Task<APIResponse<GenericResponse>> GetGenericStats ( string username, Platform platform ) =>
             await GetResponse<GenericResponse>(Endpoints.GetGeneric(username, platform));
 
-        public async Task<SeasonalResponse> GetSeasonalStats ( string username, Platform platform ) =>
+        public async Task<APIResponse<SeasonalResponse>> GetSeasonalStats ( string username, Platform platform ) =>
             await GetResponse<SeasonalResponse>(Endpoints.GetSeasonal(username, platform));
 
-        public async Task<OperatorResponse> GetOperatorStats ( string username, Platform platform ) =>
-            await GetResponse<OperatorResponse>(Endpoints.GetSeasonal(username, platform));
+        public async Task<APIResponse<OperatorResponse>> GetOperatorStats ( string username, Platform platform ) =>
+            await GetResponse<OperatorResponse>(Endpoints.GetOperators(username, platform));
 
         public async Task<IEnumerable<OperatorStat>> GetOperatorStats ( string username, Platform platform, Func<OperatorStat, bool> predicate ) =>
-            ( await GetOperatorStats(username, platform) ).Operators.Where(predicate);
+            ( await GetOperatorStats(username, platform) ).Payload.Operators.Where(predicate);
 
-        public async Task<WeaponsResponse> GetWeaponStats ( string username, Platform platform ) =>
+        public async Task<APIResponse<WeaponsResponse>> GetWeaponStats ( string username, Platform platform ) =>
             await GetResponse<WeaponsResponse>(Endpoints.GetWeapons(username, platform));
 
-        public async Task<WeaponCategoryResponse> GetWeaponCategoryStats ( string username, Platform platform ) =>
+        public async Task<APIResponse<WeaponCategoryResponse>> GetWeaponCategoryStats ( string username, Platform platform ) =>
             await GetResponse<WeaponCategoryResponse>(Endpoints.GetWeaponCats(username, platform));
 
         public async Task<IEnumerable<WeaponCategoryStat>> GetWeaponCategoryStats ( string username, Platform platform, Func<WeaponCategoryStat, bool> predicate ) =>
-            ( await GetWeaponCategoryStats(username, platform) ).WeaponCategories.Where(predicate);
+            ( await GetWeaponCategoryStats(username, platform) ).Payload.WeaponCategories.Where(predicate);
 
-        public async Task<IEnumerable<LeaderboardSlot>> GetLeaderboard ( Region region = Region.ALL ) =>
-            await GetResponse<IEnumerable<LeaderboardSlot>>(Endpoints.GetLeaderboard(region));
+        public async Task<APIResponse<Leaderboard>> GetLeaderboard (Platform platform, Region region = Region.ALL ) =>
+            await GetResponse<Leaderboard>(Endpoints.GetLeaderboard(platform, region));
 
-        private async Task<T> GetResponse<T> ( string endpoint, JsonSerializerSettings settings = default ) where T : class
+        private async Task<APIResponse<T>> GetResponse<T> ( string endpoint, JsonSerializerSettings settings = default ) where T : IPayload
         {
             var response = await _httpClient.GetAsync(endpoint);
 
@@ -81,10 +82,10 @@ namespace R6Stat_Sharp
             if (!response.IsSuccessStatusCode)
             {
                 var error = JsonConvert.DeserializeObject<ApiError>(content);
-                throw new Exception($"API Exception Occurred, Status: {error.Status} Error: {error.Error}");
+                return new APIResponse<T>(error.Status, error.Error);
             }
-
-            return JsonConvert.DeserializeObject<T>(content, settings);
+            var payload = JsonConvert.DeserializeObject<T>(content, settings);
+            return new APIResponse<T>(response.StatusCode.ToString(), payload);
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using R6Stat_Sharp.Enums;
+using R6Stat_Sharp.Response.Interfaces;
 using System;
 
 namespace R6Stat_Sharp.Models
 {
     /// <summary>
-    /// Represents an API response from the <see href="https://r6stats.com/">R6Stats API</see>
+    /// Represents an api response for a username search from the <see href="https://r6stats.com/">R6Stats API</see>
     /// </summary>
     /// <remarks>
-    /// Every API request returns an <see cref="IResponse"/> with the exception of <see cref="R6StatsClient.GetLeaderboard(Region)"/>, which returns a collection
-    /// of <see cref="IResponse"/> for every player in the leaderboard.
+    /// Every API request returns an <see cref="IStat"/> with the exception of <see cref="R6StatsClient.GetLeaderboard(Region)"/>, which returns a collection
+    /// of <see cref="IStat"/> for every player in the leaderboard.
     /// </remarks>
-    public interface IResponse
+    public interface IStat
     {
         /// <summary>
         /// Username of the searched player

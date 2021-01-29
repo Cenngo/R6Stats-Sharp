@@ -3,6 +3,17 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>R6Stat_Sharp</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Cenk Ergen</Authors>
+    <Description>.NET client for R6Stats API for data handling and data deserialization.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Cenngo/R6Stats-Sharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Cenngo/R6Stats-Sharp</RepositoryUrl>
+    <PackageTags>Rainbow6 Api R6Stats</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

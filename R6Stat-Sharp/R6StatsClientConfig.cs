@@ -10,8 +10,10 @@
         /// </summary>
         public string ApiKey { get; set; }
 
-        public R6StatsClientConfig ( )
+        public R6StatsClientConfig ( string apiKey )
         {
+            ApiKey = apiKey;
         }
+        public R6StatsClientConfig ( ) { }
     }
 }
