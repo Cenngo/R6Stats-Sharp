@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using R6Stats.Response.Interfaces;
 using R6Stats.Stats;
+using R6Stats.Stats.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,6 +21,6 @@ namespace R6Stats.Response
         [JsonIgnore]
         public IReadOnlyDictionary<string, SeasonalStat> SeasonalStats => _seasonalStats;
 
-        public SeasonalStat CurrentRankedData => _seasonalStats.Values.ElementAt(0);
+        public IRankedData CurrentRankedData => _seasonalStats.Values.ElementAt(0).Regions.ElementAt(0);
     }
 }
