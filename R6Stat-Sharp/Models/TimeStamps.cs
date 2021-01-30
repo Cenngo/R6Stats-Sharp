@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Models
 {
     /// <summary>
     /// Represents a timestamp for an operation

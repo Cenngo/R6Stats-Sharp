@@ -1,7 +1,6 @@
-﻿using R6Stat_Sharp.Enums;
-using R6Stat_Sharp.Response;
+﻿using R6Stats.Enums;
 
-namespace R6Stat_Sharp
+namespace R6Stats
 {
     /// <summary>
     /// Class containing all of the necessary API endpoints for <see href="https://r6stats.com/">R6Stats API</see>

@@ -1,15 +1,11 @@
-﻿using R6Stat_Sharp.Models;
-using R6Stat_Sharp.Response.Interfaces;
-using R6Stat_Sharp.Stats;
-using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using R6Stats.Response.Interfaces;
+using R6Stats.Stats;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Response
 {
     /// <summary>
     /// A read-only <see cref="IEnumerable"/> which contains the contents of a leaderboard starting from the first place
@@ -24,7 +20,7 @@ namespace R6Stat_Sharp.Response
         }
 
         [JsonConstructor]
-        internal Leaderboard( IEnumerable<LeaderboardSlot> leaderboard )
+        internal Leaderboard ( IEnumerable<LeaderboardSlot> leaderboard )
         {
             _leaderboard = leaderboard.ToList();
         }

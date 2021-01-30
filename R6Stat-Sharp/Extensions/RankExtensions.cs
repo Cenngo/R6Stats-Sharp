@@ -1,7 +1,7 @@
-﻿using R6Stat_Sharp.Stats;
+﻿using R6Stats.Stats.Interfaces;
 using System.Drawing;
 
-namespace R6Stat_Sharp.Extensions
+namespace R6Stats.Extensions
 {
     /// <summary>
     /// Extensions class for utilities regarding ranked data

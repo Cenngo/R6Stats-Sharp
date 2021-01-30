@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace R6Stat_Sharp.Enums
+namespace R6Stats.Enums
 {
     /// <summary>
     /// Represents a geographical region 

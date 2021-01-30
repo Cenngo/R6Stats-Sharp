@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace R6Stat_Sharp.Stats
+namespace R6Stats.Stats
 {
     public class PlayerProgression
     {

@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Models;
-using R6Stat_Sharp.Stats;
+using R6Stats.Response.Interfaces;
+using R6Stats.Stats;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Response
 {
     /// <summary>
     /// Contains game stats of a player for each season

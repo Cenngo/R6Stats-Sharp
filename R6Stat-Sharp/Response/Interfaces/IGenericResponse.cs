@@ -1,8 +1,8 @@
-﻿using R6Stat_Sharp.Models;
-using R6Stat_Sharp.Stats;
+﻿using R6Stats.Models;
+using R6Stats.Stats;
 using System.Collections.Generic;
 
-namespace R6Stat_Sharp.Response.Interfaces
+namespace R6Stats.Response.Interfaces
 {
     /// <summary>
     /// API response containing the essential information about a player

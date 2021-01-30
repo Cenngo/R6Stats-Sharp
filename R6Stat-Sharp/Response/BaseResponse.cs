@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Enums;
-using R6Stat_Sharp.Models;
-using R6Stat_Sharp.Response.Interfaces;
+using R6Stats.Enums;
+using R6Stats.Response.Interfaces;
 using System;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Response
 {
     /// <summary>
     /// Base response class for parsing API Responses

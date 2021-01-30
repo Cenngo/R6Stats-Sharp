@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace R6Stat_Sharp.Response.Interfaces
+namespace R6Stats.Response.Interfaces
 {
     public interface IPayload
     {

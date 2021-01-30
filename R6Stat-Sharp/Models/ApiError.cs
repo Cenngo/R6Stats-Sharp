@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace R6Stat_Sharp.Models
+namespace R6Stats.Models
 {
     /// <summary>
     /// Represents an API Error thrown by the <see cref="https://r6stats.com/"/> API after a bad request

@@ -1,8 +1,7 @@
-﻿using R6Stat_Sharp.Enums;
-using R6Stat_Sharp.Response.Interfaces;
+﻿using R6Stats.Enums;
 using System;
 
-namespace R6Stat_Sharp.Models
+namespace R6Stats.Response.Interfaces
 {
     /// <summary>
     /// Represents an api response for a username search from the <see href="https://r6stats.com/">R6Stats API</see>

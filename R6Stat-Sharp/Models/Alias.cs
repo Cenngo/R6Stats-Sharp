@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Response.Interfaces;
+using R6Stats.Response.Interfaces;
 using System;
 
-namespace R6Stat_Sharp.Models
+namespace R6Stats.Models
 {
     /// <summary>
     /// <inheritdoc/>

@@ -1,4 +1,4 @@
-﻿namespace R6Stat_Sharp.Stats
+﻿namespace R6Stats.Stats.Interfaces
 {
     public interface IWeaponStat
     {

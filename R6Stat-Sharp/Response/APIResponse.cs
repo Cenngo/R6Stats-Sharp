@@ -1,24 +1,20 @@
-﻿using R6Stat_Sharp.Models;
-using R6Stat_Sharp.Response.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using R6Stats.Response.Interfaces;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Response
 {
-    public class APIResponse<T> where T : IPayload
+    public sealed class APIResponse<T> where T : IPayload
     {
         public string Status { get; }
         public string Error { get; }
         public T Payload { get; }
 
-        internal APIResponse(string status, T payload )
+        internal APIResponse ( string status, T payload )
         {
             Status = status;
             Payload = payload;
         }
 
-        internal APIResponse(string status, string error )
+        internal APIResponse ( string status, string error )
         {
             Status = status;
             Error = error;

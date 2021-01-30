@@ -1,4 +1,4 @@
-﻿namespace R6Stat_Sharp.Response.Interfaces
+﻿namespace R6Stats.Response.Interfaces
 {
     /// <summary>
     /// An alias used a the player as their username

@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Response;
+using R6Stats.Models;
+using R6Stats.Stats.Interfaces;
 
-namespace R6Stat_Sharp.Stats
+namespace R6Stats.Stats
 {
     public class WeaponCategoryStat : TimeStamps, IWeaponStat
     {

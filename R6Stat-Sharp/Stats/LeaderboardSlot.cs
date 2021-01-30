@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Response;
+using R6Stats.Response;
 
-namespace R6Stat_Sharp.Stats
+namespace R6Stats.Stats
 {
     public class LeaderboardSlot : BaseResponse
     {

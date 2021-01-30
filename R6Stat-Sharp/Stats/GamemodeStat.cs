@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
+using R6Stats.Stats.Interfaces;
 using System;
 
-namespace R6Stat_Sharp.Stats
+namespace R6Stats.Stats
 {
     public class GamemodeStat : IGamemodeStat
     {

@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Enums;
+using R6Stats.Enums;
+using R6Stats.Stats.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace R6Stat_Sharp.Stats
+namespace R6Stats.Stats
 {
     public class SeasonalStat : ISeasonalStat
     {

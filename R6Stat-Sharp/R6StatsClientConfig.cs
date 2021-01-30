@@ -1,4 +1,4 @@
-﻿namespace R6Stat_Sharp
+﻿namespace R6Stats
 {
     /// <summary>
     /// Config object used to initialize the API client <see cref="R6StatsClient"/>

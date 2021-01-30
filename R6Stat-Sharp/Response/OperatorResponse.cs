@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Stats;
+using R6Stats.Response.Interfaces;
+using R6Stats.Stats;
 using System.Collections.Generic;
 
-namespace R6Stat_Sharp.Response
+namespace R6Stats.Response
 {
     /// <summary>
     /// Contains operator stats of a player
