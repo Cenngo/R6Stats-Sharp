@@ -2,6 +2,12 @@
 
 namespace R6Stats.Stats
 {
+    /// <summary>
+    /// Represents player progression
+    /// </summary>
+    /// <remarks>
+    /// Contains player experience data and alpha pack probability
+    /// </remarks>
     public class PlayerProgression
     {
         [JsonProperty("level")]

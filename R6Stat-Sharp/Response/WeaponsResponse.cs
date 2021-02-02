@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using R6Stats.Response.Interfaces;
 using R6Stats.Stats;
+using R6Stats.Stats.Interfaces;
 using System.Collections.Generic;
 
 namespace R6Stats.Response

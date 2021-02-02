@@ -1,16 +1,13 @@
 ﻿using Newtonsoft.Json;
-using R6Stat_Sharp.Models;
 using R6Stats.Enums;
 using R6Stats.Models;
 using R6Stats.Response;
 using R6Stats.Response.Interfaces;
-using R6Stats.Stats;
+using R6Stats.Stats.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -33,7 +30,7 @@ namespace R6Stats
         /// <summary>
         /// Create an instance of <see cref="R6StatsClient"/>
         /// </summary>
-        /// <param name="config"><see cref="Config">Object containing the necessary information to instanciate the client</param>
+        /// <param name="config"><see cref="Config"> containing the necessary information to instanciate the client</param>
         public R6StatsClient ( Config config )
         {
             _key = config.ApiKey;
@@ -54,7 +51,7 @@ namespace R6Stats
         /// </summary>
         /// <param name="config"><see cref="Config">Object containing the necessary information to instanciate the client</param>
         /// <param name="headers">Optional request headers to be used while making REST API requests</param>
-        public R6StatsClient( Config config, IDictionary<string, IEnumerable<string>> headers) : this(config)
+        public R6StatsClient ( Config config, IDictionary<string, IEnumerable<string>> headers ) : this(config)
         {
             _headers = headers.ToImmutableDictionary();
 
@@ -66,8 +63,8 @@ namespace R6Stats
         /// Method for making generic data request to the API
         /// </summary>
         /// <remarks>Generic information contains the basic profile information along with some overall information about gamemode stats</remarks>
-        /// <param name="username">Username to be parsed</param>
-        /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="username">Username the stats belongs to</param>
+        /// <param name="platform">Platform the user plays on</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="GenericResponse"/> with the requested data</returns>
         public async Task<APIResponse<GenericResponse>> GetGenericStats ( string username, Platform platform ) =>
             await GetResponse<GenericResponse>(Endpoints.GetGeneric(username, platform));
@@ -75,8 +72,8 @@ namespace R6Stats
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="username">Username to be parsed</param>
-        /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="username">Username the stats belongs to</param>
+        /// <param name="platform">Platform the user plays on</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="SeasonalResponse"/> with the requested data</returns>
         public async Task<APIResponse<SeasonalResponse>> GetSeasonalStats ( string username, Platform platform ) =>
             await GetResponse<SeasonalResponse>(Endpoints.GetSeasonal(username, platform));
@@ -84,8 +81,8 @@ namespace R6Stats
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="username">Username to be parsed</param>
-        /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="username">Username the stats belongs to</param>
+        /// <param name="platform">Platform the user plays on</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="OperatorResponse"/> with the requested data</returns>
         public async Task<APIResponse<OperatorResponse>> GetOperatorStats ( string username, Platform platform ) =>
             await GetResponse<OperatorResponse>(Endpoints.GetOperators(username, platform));
@@ -93,8 +90,8 @@ namespace R6Stats
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="username">Username to be parsed</param>
-        /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="username">Username the stats belongs to</param>
+        /// <param name="platform">Platform the user plays on</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="WeaponsResponse"/> with the requested data</returns>
         public async Task<APIResponse<WeaponsResponse>> GetWeaponStats ( string username, Platform platform ) =>
             await GetResponse<WeaponsResponse>(Endpoints.GetWeapons(username, platform));
@@ -102,8 +99,8 @@ namespace R6Stats
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="username">Username to be parsed</param>
-        /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="username">Username the stats belongs to</param>
+        /// <param name="platform">Platform the user plays on</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="WeaponCategoryResponse"/> with the requested data</returns>
         public async Task<APIResponse<WeaponCategoryResponse>> GetWeaponCategoryStats ( string username, Platform platform ) =>
             await GetResponse<WeaponCategoryResponse>(Endpoints.GetWeaponCats(username, platform));
@@ -111,10 +108,10 @@ namespace R6Stats
         /// <summary>
         /// Parse the current leaderboard for a region
         /// </summary>
-        /// <param name="platform">Platform the leaderboard belongs to</param>
+        /// <param name="platform">Platform for the leaderboard</param>
         /// <param name="region">Region of the players in the leaderboard</param>
         /// <returns><see cref="APIResponse{T}"/> containing the request status data and a <see cref="Leaderboard"/> with the requested data</returns>
-        public async Task<APIResponse<Leaderboard>> GetLeaderboard (Platform platform, Region region = Region.ALL ) =>
+        public async Task<APIResponse<Leaderboard>> GetLeaderboard ( Platform platform, Region region = Region.ALL ) =>
             await GetResponse<Leaderboard>(Endpoints.GetLeaderboard(platform, region));
 
         /*
@@ -133,7 +130,6 @@ namespace R6Stats
             return new ReadOnlyDictionary<Platform, GenericResponse>(platforms);
         }
         */
-
         private async Task<APIResponse<T>> GetResponse<T> ( string endpoint, JsonSerializerSettings settings = default ) where T : IPayload
         {
             var response = await _httpClient.GetAsync(endpoint);

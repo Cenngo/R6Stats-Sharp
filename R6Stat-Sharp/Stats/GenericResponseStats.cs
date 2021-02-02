@@ -2,6 +2,7 @@
 
 namespace R6Stats.Stats
 {
+
     public class GenericResponseStats
     {
         [JsonProperty("general")]
