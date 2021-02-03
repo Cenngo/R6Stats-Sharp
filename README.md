@@ -34,7 +34,7 @@ var seasonal = await client.GetSeasonalStats("<username>", Platform.PC);
 .
 ```
 
-## Making a basit API request
+## Making a basic API request
 ```csharp
 var client = new R6StatsClient(new R6StatsClientConfig("<api-key>"));
 var response = await client.GetGenericResponse("<username>", Platform.PC);
