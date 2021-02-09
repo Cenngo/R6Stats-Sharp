@@ -6,11 +6,11 @@ C# API Client for R6Stats API
 </a>
 <a href="https://www.nuget.org/packages/R6Stats-Sharp/">
 <img alt="Nuget" src="https://img.shields.io/nuget/dt/R6Stats-Sharp?color=blue&logo=nuget&logoColor=white&style=for-the-badge">
-</a?
+</a>
 
 ---
 ## Getting Started
-To use this library, first you need to create an instance of the REST API Client.
+To use this library you will need an API Key. You can learn more about it [here.](https://github.com/R6Stats/r6stats-node#api-key)
 ```csharp
 var config = new R6StatsClientConfig("<api key>");
 var client = new R6StatsClient(config);
@@ -29,4 +29,19 @@ Every request type can be made by their respective method.
 ```csharp
 var generic = await client.GetGenericStats("<username>", Platform.PC);
 var seasonal = await client.GetSeasonalStats("<username>", Platform.PC);
+.
+.
+.
+```
+
+## Making a basic API request
+```csharp
+var client = new R6StatsClient(new R6StatsClientConfig("<api-key>"));
+var response = await client.GetGenericResponse("<username>", Platform.PC);
+
+if(response.IsSuccessful){
+  var data = response.Payload;
+  
+  //do something
+}
 ```
