@@ -1,0 +1,1299 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R6Stat-Sharp</name>
+    </assembly>
+    <members>
+        <member name="T:R6Stats.Endpoints">
+            <summary>
+            Class containing all of the necessary API endpoints for <see href="https://r6stats.com/">R6Stats API</see>
+            </summary>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetGeneric(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method to for creating the path for a generic profile request <seealso cref="!:GenericResponse"/>
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetOperators(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method to for creating the path for a operator stat request <seealso cref="!:OperatorResponse"/>
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetSeasonal(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method to for creating the path for a operator stat request <seealso cref="!:OperatorResponse"/>
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetWeapons(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method to for creating the path for a weapons stat request <seealso cref="!:WeaponsResponse"/>
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetWeaponCats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method to for creating the path for a weapon category stat request <seealso cref="!:WeaponCategoryResponse"/>
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="M:R6Stats.Endpoints.GetLeaderboard(R6Stats.Enums.Platform,R6Stats.Enums.Region)">
+            <summary>
+            Method to for creating the path for a operator stat request
+            </summary>
+            <param name="username">Username to be parsed</param>
+            <param name="platform">Platform the username belongs to</param>
+            <returns>Path to send the GET request</returns>
+        </member>
+        <member name="T:R6Stats.Enums.OperatorType">
+            <summary>
+            Represent the role of an operator
+            </summary>
+        </member>
+        <member name="T:R6Stats.Enums.Platform">
+            <summary>
+            Represents the platform the stat date belongs to
+            </summary>
+        </member>
+        <member name="T:R6Stats.Enums.Region">
+            <summary>
+            Represents a geographical region 
+            </summary>
+        </member>
+        <member name="T:R6Stats.Extensions.RankExtensions">
+            <summary>
+            Extensions class for utilities regarding ranked data
+            </summary>
+        </member>
+        <member name="M:R6Stats.Extensions.RankExtensions.GetRankColor(R6Stats.Stats.Interfaces.IRankedData,System.Boolean)">
+            <summary>
+            Parse the badge color for a rank
+            </summary>
+            <param name="data">Object containing the rank information of a player</param>
+            <param name="parseMax">Parse the color of max rank achieved by the player if <see langword="true"/>, else parse the badge color of the current rank</param>
+            <returns>Badge color of the given rank</returns>
+        </member>
+        <member name="T:R6Stats.Models.Alias">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.Alias.Username">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.Alias.LastSeenAt">
+            <summary>
+            The last use date for the given alias
+            </summary>
+        </member>
+        <member name="T:R6Stats.Models.ApiError">
+            <summary>
+            Represents an API Error thrown by the <see cref="!:https://r6stats.com/"/> API after a bad request
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.ApiError.Status">
+            <summary>
+            Status code of the error
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.ApiError.Error">
+            <summary>
+            Description of the error
+            </summary>
+        </member>
+        <member name="T:R6Stats.Models.TimeStamps">
+            <summary>
+            Represents a timestamp for an operation
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.TimeStamps.Created">
+            <summary>
+            Date the object was created
+            </summary>
+        </member>
+        <member name="P:R6Stats.Models.TimeStamps.LastUpdated">
+            <summary>
+            Date the object was last updated
+            </summary>
+        </member>
+        <member name="T:R6Stats.R6StatsClient">
+            <summary>
+            API client for parsing Rainbow6 Siege Game Data
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:R6Stats.R6StatsClient.#ctor(R6Stats.R6StatsClientConfig)" -->
+        <!-- Badly formed XML comment ignored for member "M:R6Stats.R6StatsClient.#ctor(R6Stats.R6StatsClientConfig,System.Collections.Generic.IDictionary{System.String,System.Collections.Generic.IEnumerable{System.String}})" -->
+        <member name="M:R6Stats.R6StatsClient.GetGenericStats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            Method for making generic data request to the API
+            </summary>
+            <remarks>Generic information contains the basic profile information along with some overall information about gamemode stats</remarks>
+            <param name="username">Username the stats belongs to</param>
+            <param name="platform">Platform the user plays on</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.GenericResponse"/> with the requested data</returns>
+        </member>
+        <member name="M:R6Stats.R6StatsClient.GetSeasonalStats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            
+            </summary>
+            <param name="username">Username the stats belongs to</param>
+            <param name="platform">Platform the user plays on</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.SeasonalResponse"/> with the requested data</returns>
+        </member>
+        <member name="M:R6Stats.R6StatsClient.GetOperatorStats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            
+            </summary>
+            <param name="username">Username the stats belongs to</param>
+            <param name="platform">Platform the user plays on</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.OperatorResponse"/> with the requested data</returns>
+        </member>
+        <member name="M:R6Stats.R6StatsClient.GetWeaponStats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            
+            </summary>
+            <param name="username">Username the stats belongs to</param>
+            <param name="platform">Platform the user plays on</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.WeaponsResponse"/> with the requested data</returns>
+        </member>
+        <member name="M:R6Stats.R6StatsClient.GetWeaponCategoryStats(System.String,R6Stats.Enums.Platform)">
+            <summary>
+            
+            </summary>
+            <param name="username">Username the stats belongs to</param>
+            <param name="platform">Platform the user plays on</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.WeaponCategoryResponse"/> with the requested data</returns>
+        </member>
+        <member name="M:R6Stats.R6StatsClient.GetLeaderboard(R6Stats.Enums.Platform,R6Stats.Enums.Region)">
+            <summary>
+            Parse the current leaderboard for a region
+            </summary>
+            <param name="platform">Platform for the leaderboard</param>
+            <param name="region">Region of the players in the leaderboard</param>
+            <returns><see cref="T:R6Stats.Response.APIResponse`1"/> containing the request status data and a <see cref="T:R6Stats.Response.Leaderboard"/> with the requested data</returns>
+        </member>
+        <member name="T:R6Stats.R6StatsClientConfig">
+            <summary>
+            Config object used to initialize the API client <see cref="T:R6Stats.R6StatsClient"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.R6StatsClientConfig.ApiKey">
+            <summary>
+            Bearer token for the API which can be obtained from <see href="https://discord.gg/pUdraS3">R6Stats Discord Server</see>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.APIResponse`1">
+            <summary>
+            Represents the response of an Api interaction with <see href="https://r6stats.com/">R6Stats API</see>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:R6Stats.Response.APIResponse`1.Status">
+            <summary>
+            Status of the Api response
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.APIResponse`1.Error">
+            <summary>
+            Error message for the response if the <see cref="P:R6Stats.Response.APIResponse`1.Status"/> is not "OK"
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.APIResponse`1.IsSuccessful">
+            <summary>
+            Whether the Api interaction was successful or not
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.APIResponse`1.Payload">
+            <summary>
+            Data returned by the Api if the interaction was successful
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.BaseResponse">
+            <summary>
+            Base response class for parsing API Responses
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.Username">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.Platform">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.UbisoftID">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.UplayID">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.Avatar146">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.Avatar256">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.BaseResponse.LastUpdated">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.GenericResponse">
+            <summary>
+            Contains the essential profile data of a user
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.GenericResponse.Aliases">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.GenericResponse.PlayerProgression">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.GenericResponse.Stats">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.GenericResponse.TimeStamps">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IAlias">
+            <summary>
+            An alias used a the player as their username
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IAlias.Username">
+            <summary>
+            An alias used by a player
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IGenericResponse">
+            <summary>
+            API response containing the essential information about a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IGenericResponse.Aliases">
+            <summary>
+            Previous aliases used by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IGenericResponse.PlayerProgression">
+            <summary>
+            Player's experience data
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IGenericResponse.Stats">
+            <summary>
+            Overall stats of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IGenericResponse.TimeStamps">
+            <summary>
+            Time information of the archived data
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IOperatorResponse">
+            <summary>
+            API response containing the operator stats of a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IOperatorResponse.Operators">
+            <summary>
+            Collection for the stats of the operators played by the user
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IPayload">
+            <summary>
+            Represents a deserialized api data 
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.ISeasonalResponse">
+            <summary>
+            API response containing seasonal game stats
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.ISeasonalResponse.SeasonalStats">
+            <summary>
+            Stats for every season, keyed with their respective name
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IStat">
+            <summary>
+            Represents an api response for a username search from the <see href="https://r6stats.com/">R6Stats API</see>
+            </summary>
+            <remarks>
+            Every API request returns an <see cref="T:R6Stats.Response.Interfaces.IStat"/> with the exception of <see cref="!:R6StatsClient.GetLeaderboard(Region)"/>, which returns a collection
+            of <see cref="T:R6Stats.Response.Interfaces.IStat"/> for every player in the leaderboard.
+            </remarks>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.Username">
+            <summary>
+            Username of the searched player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.Platform">
+            <summary>
+            Preferred platform by the user
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.UbisoftID">
+            <summary>
+            Ubisoft ID string of the user
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.UplayID">
+            <summary>
+            Uplay ID string of the user
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.Avatar146">
+            <summary>
+            Url of players 146px avatar  picture
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.Avatar256">
+            <summary>
+            Url of players 256px avatar  picture
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IStat.LastUpdated">
+            <summary>
+            Time the parsed data was last updated at
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IWeaponCategoryResponse">
+            <summary>
+            API response containing stats for each weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IWeaponCategoryResponse.WeaponCategories">
+            <summary>
+            Stats for every weapon category
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Interfaces.IWeaponResponse">
+            <summary>
+            API response containing statistics for each weapon used by a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.Interfaces.IWeaponResponse.Weapons">
+            <summary>
+            Collection of stats for different weapons
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.Leaderboard">
+            <summary>
+            A read-only <see cref="T:System.Collections.IEnumerable"/> which contains the contents of a leaderboard starting from the first place
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.OperatorResponse">
+            <summary>
+            Contains operator stats of a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.OperatorResponse.Operators">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.SeasonalResponse">
+            <summary>
+            Contains game stats of a player for each season
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.SeasonalResponse.SeasonalStats">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.SeasonalResponse.CurrentRankedData">
+            <summary>
+            Get the ranked data from the current season
+            </summary>'
+            <remarks>Returns the ranked data from any of the regions since all regions are now treated as one</remarks>
+        </member>
+        <member name="T:R6Stats.Response.WeaponCategoryResponse">
+            <summary>
+            Contains stats for different weapon categories
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.WeaponCategoryResponse.WeaponCategories">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Response.WeaponsResponse">
+            <summary>
+            Contains weapon stats of a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Response.WeaponsResponse.Weapons">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.BombStats">
+            <summary>
+            Game stats for the gamemode 'Bomb'
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.GamemodeStat">
+            <summary>
+            Player stats for a game mode type
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.BestScore">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.GamesPlayed">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.Losses">
+            <summary>
+            Number of games the player lost in this game mode
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.PlayTime">
+            <summary>
+            Total time spent playing this game mode
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.Wins">
+            <summary>
+            Number of games the player won in this game mode
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GamemodeStat.WinLose">
+            <summary>
+            Win/Lose ratio of the player for this game mode
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.GeneralStat">
+            <summary>
+            Represents the general statistics for a player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Assists">
+            <summary>
+            Number of assists scored by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.BarricadesDeployed">
+            <summary>
+            Number of barricades deployed by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.BlindKills">
+            <summary>
+            Number of blind kills gotten by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.BulletsFired">
+            <summary>
+            Number of bullets fired by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.BulletsHit">
+            <summary>
+            Number of bullets hit an opponent
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.DBNOs">
+            <summary>
+            Number of times the player got downed
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.DistanceTravelled">
+            <summary>
+            Total distance travelled by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.GadgetsDestroyed">
+            <summary>
+            Number of gadgets destroyed by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.HeadShots">
+            <summary>
+            Number of headshots the player got
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.MeleeKills">
+            <summary>
+            Number of times the players killed an opponent with melee attack
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.PenetrationKills">
+            <summary>
+            Number of penetration kills scored by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.RappelBreaches">
+            <summary>
+            Number of times the player breached an obstruction while rappeling
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.ReinforcementsDeployed">
+            <summary>
+            Number of reinforcements deployed by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Revives">
+            <summary>
+            Number of times the player revived a teammate
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Suicides">
+            <summary>
+            Number of times the player killed themselves
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Deaths">
+            <summary>
+            Number of times the player died
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Draws">
+            <summary>
+            Number of times the player traded kills with an opponent
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.GamesPlayed">
+            <summary>
+            Total number of games played
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.KD">
+            <summary>
+            Kill/Death ratio of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Kills">
+            <summary>
+            Number of times the player killed an opponent
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Losses">
+            <summary>
+            Number of times the player lsot a game
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.PlayTime">
+            <summary>
+            Total time spent playing the game
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.Wins">
+            <summary>
+            Number of games won by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.GeneralStat.WinLose">
+            <summary>
+            Win/Lose rati of the player
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.HostageStats">
+            <summary>
+            Game stats for the game mode "Hostage"
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.HostageStats.ExtractionsDenied">
+            <summary>
+            Number of times the hostage extraction was prevented
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IGamemodeStat">
+            <summary>
+            Represents the stats for a game mode type
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGamemodeStat.GamesPlayed">
+            <summary>
+            Number of games played in the game mode
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGamemodeStat.BestScore">
+            <summary>
+            Best score achieved in the game mode
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IGameStat">
+            <summary>
+            Represents the general game stats
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGameStat.Losses">
+            <summary>
+            Number of times the player lost the game
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGameStat.PlayTime">
+            <summary>
+            Total time spent playing
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGameStat.Wins">
+            <summary>
+            Number of times the player won the game
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGameStat.WinLose">
+            <summary>
+            Win/Lose ratio
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IGenericStat">
+            <summary>
+            Represents a player's generic stats
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGenericStat.GamesPlayed">
+            <summary>
+            Number of games played by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGenericStat.Deaths">
+            <summary>
+            The number of times the player died
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGenericStat.KD">
+            <summary>
+            Kill/Death ratio of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IGenericStat.Kills">
+            <summary>
+            Number of times the player kill an opponent
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IPlayerStat">
+            <summary>
+            Represents a players game stats
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.Kills">
+            <summary>
+            Number of kill the player got
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.Deaths">
+            <summary>
+            Number of times the player died
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.KD">
+            <summary>
+            Kill/Death ratio of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.Wins">
+            <summary>
+            Number of games the player won
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.Losses">
+            <summary>
+            Number of games the player lost
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IPlayerStat.WinLose">
+            <summary>
+            Win/Lose ratio of the player
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IRankedData">
+            <summary>
+            Represents a players ranked data
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.MaxMMR">
+            <summary>
+            Max MMR achieved by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.MaxRank">
+            <summary>
+            Max rank achieved by the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.MaxRankText">
+            <summary>
+            Text representation of the <see cref="P:R6Stats.Stats.Interfaces.IRankedData.MaxRank"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.MaxRankImg">
+            <summary>
+            Badge for the <see cref="P:R6Stats.Stats.Interfaces.IRankedData.MaxRank"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.MMR">
+            <summary>
+            Current MMR of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.Rank">
+            <summary>
+            Current rank of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.RankText">
+            <summary>
+            Text representation of the <see cref="P:R6Stats.Stats.Interfaces.IRankedData.Rank"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.RankImg">
+            <summary>
+            Badge for the <see cref="P:R6Stats.Stats.Interfaces.IRankedData.Rank"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.NextRankMMR">
+            <summary>
+            Minimum MMR required to achieve the next rank
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IRankedData.PrevRankMMR">
+            <summary>
+            Maximum MMR value of the previous rank
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.ISeasonalStat">
+            <summary>
+            Represents the stats for a season
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.ISeasonalStat.StartDate">
+            <summary>
+            Start date of the season
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.ISeasonalStat.EndDate">
+            <summary>
+            End date of the season
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.ISeasonalStat.Regions">
+            <summary>
+            Season stats with respect to the server regions
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.Interfaces.IWeaponStat">
+            <summary>
+            Represent the use stats for a weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.Category">
+            <summary>
+            Category of the weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.Kills">
+            <summary>
+            Number of kills the player got with this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.Deaths">
+            <summary>
+            Number of times the player died while using this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.KD">
+            <summary>
+            Kill/Death ratio achieved while using this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.HeadShots">
+            <summary>
+            Headshots scored with this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.HSPercentage">
+            <summary>
+            Ratio of Headshots to the total number of kills
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.TimesChosen">
+            <summary>
+            Number of times the player equiped this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.BulletsFired">
+            <summary>
+            Number of bullets fired from this weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Interfaces.IWeaponStat.BulletsHit">
+            <summary>
+            Number of bullets which hit an opponent that is fired from this gun.
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.LeaderboardSlot">
+            <summary>
+            Represents a slot of a <see cref="T:R6Stats.Response.Leaderboard"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.LeaderboardSlot.Stats">
+            <summary>
+            Stats for the player in this <see cref="T:R6Stats.Stats.LeaderboardSlot"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.LeaderboardSlot.Position">
+            <summary>
+            Position of this slot in the leaderboard
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.LeaderboardUserStats">
+            <summary>
+            User stats for a player in a leaderboard
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.LeaderboardUserStats.Level">
+            <summary>
+            Level of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.LeaderboardUserStats.KD">
+            <summary>
+            Kill/Death ratio of the player
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.LeaderboardUserStats.WL">
+            <summary>
+            Win/Lose ratio of the player
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.OperatorStat">
+            <summary>
+            Represents game stats for an R6 operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Name">
+            <summary>
+            Name of the operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.CTU">
+            <summary>
+            Counter-Terrorist Unit the operator is associated with
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Role">
+            <summary>
+            Role of the player: Attacker/Defender
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Kills">
+            <summary>
+            Number of kills scored while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Deaths">
+            <summary>
+            Number of times the player died while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.KD">
+            <summary>
+            Kill/Death ratio achieved with this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Wins">
+            <summary>
+            Number of games won while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Losses">
+            <summary>
+            Number of games lost while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.WinLose">
+            <summary>
+            Win/Lose ratio achieved with this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.HeadShots">
+            <summary>
+            Number of headshot kills scored with this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.DBNOs">
+            <summary>
+            Number of times the player got downed while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.MeleeKills">
+            <summary>
+            Number of melee kills scored while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.Experience">
+            <summary>
+            Experience gained while playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.PlayTime">
+            <summary>
+            Total time spent playing this operator
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.OperatorAbilities">
+            <summary>
+            Stats for each operator ability, keyed with the abilities name
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.OperatorStat.BadgeImg">
+            <summary>
+            Badge for the <see cref="P:R6Stats.Stats.OperatorStat.CTU"/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.PlayerProgression">
+            <summary>
+            Represents player progression
+            </summary>
+            <remarks>
+            Contains player experience data and alpha pack probability
+            </remarks>
+        </member>
+        <member name="T:R6Stats.Stats.QueueStat">
+            <summary>
+            Game stats for a game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.Deaths">
+            <summary>
+            Number of times the player died
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.Draws">
+            <summary>
+            Number of times the player traded kills with an opponent
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.GamesPlayed">
+            <summary>
+            Number of games played
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.KD">
+            <summary>
+            Kill/Death ratio achieved by the player in this game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.Kills">
+            <summary>
+            Number of kills scored by the player in this game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.Losses">
+            <summary>
+            Number of games lost in this game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.PlayTime">
+            <summary>
+            Total times spent playing this game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.Wins">
+            <summary>
+            Number of games the player won in this game queue
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.QueueStat.WinLose">
+            <summary>
+            Win/Lose ratio of the player
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.SeasonalStat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SeasonalStat.Name">
+            <summary>
+            Name of the season
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SeasonalStat.StartDate">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SeasonalStat.EndDate">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SeasonalStat.Regions">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Regions.NCSA">
+            <summary>
+            Region stats for North, Central and South America
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Regions.EMEA">
+            <summary>
+            Region stats for Europe, the Middle East and Africa
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.Regions.APAC">
+            <summary>
+            Region stats for Asia, Pacific
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.RegionStat">
+            <summary>
+            Ranked stats for a server region
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Region">
+            <summary>
+            Region of this <see cref="T:R6Stats.Stats.RegionStat"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Abandons">
+            <summary>
+            Number of times the player abandoned the game
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Losses">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.MaxMMR">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.MaxRank">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.MMR">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.NextRankMMR">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.PrevRankMMR">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Rank">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.SkillMean">
+            <summary>
+            Mean value of the player's skill
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.SkillStandartDeviation">
+            <summary>
+            Standart deviation of player's skill
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.CreatedForDate">
+            <summary>
+            Date this region data was created for
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Wins">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Kills">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.Deaths">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.LastMMRChange">
+            <summary>
+            Value of the last MMR change after a ranked match
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.LastSkillMeanChange">
+            <summary>
+            Value of the last change of <see cref="P:R6Stats.Stats.RegionStat.SkillMean"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.LastSkillStandartDeviationChange">
+            <summary>
+            Value of the last change of <see cref="P:R6Stats.Stats.RegionStat.SkillStandartDeviation"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.LastMatchResult">
+            <summary>
+            Result of the last ranked match
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.ChampionsPosition">
+            <summary>
+            Champions rank position if the player is a champion
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.MaxRankText">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.MaxRankImg">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.RankText">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.RankImg">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.KD">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.RegionStat.WinLose">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.SecureAreaStats">
+            <summary>
+            Game stats for game mode "Secure Area"
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SecureAreaStats.KillsAsAttackerInObj">
+            <summary>
+            Number of attackers killed in objective
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SecureAreaStats.KillsAsDeffenderInObj">
+            <summary>
+            Number of defenders killed in objective
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.SecureAreaStats.TimesObjSecured">
+            <summary>
+            Number of times the objective was secured
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.WeaponCategoryStat">
+            <summary>
+            Weapon stats for a weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.Category">
+            <summary>
+            Weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.Kills">
+            <summary>
+            Total number of kills scored while using a weapon from this weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.Deaths">
+            <summary>
+            Total number of times the player died while using a weapon from this weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.KD">
+            <summary>
+            Ratio of <see cref="P:R6Stats.Stats.WeaponCategoryStat.Kills"/> to <see cref="P:R6Stats.Stats.WeaponCategoryStat.Deaths"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.HeadShots">
+            <summary>
+            Total number of headshot kills scored while using a weapon from this weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.HSPercentage">
+            <summary>
+            Ratio of <see cref="P:R6Stats.Stats.WeaponCategoryStat.HeadShots"/> to the <see cref="P:R6Stats.Stats.WeaponCategoryStat.Kills"/>
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.TimesChosen">
+            <summary>
+            Number of times a weapon from this weapon category is equipped
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.BulletsFired">
+            <summary>
+            Total number of bullets fired from guns belonging to this weapon category
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponCategoryStat.BulletsHit">
+            <summary>
+            Number of bullets that hit an enemy which is fired from guns belonging to this weapon category
+            </summary>
+        </member>
+        <member name="T:R6Stats.Stats.WeaponStat">
+            <summary>
+            Represents stats for a game weapon
+            </summary>
+        </member>
+        <member name="P:R6Stats.Stats.WeaponStat.Weapon">
+            <summary>
+            Name of the weapon
+            </summary>
+        </member>
+    </members>
+</doc>
