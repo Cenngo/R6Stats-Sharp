@@ -15,6 +15,9 @@
         /// </summary>
         int Deaths { get; }
 
+        /// <summary>
+        /// Number of times the player traded a kill with an opponent
+        /// </summary>
         int Draws { get; }
 
         /// <summary>
