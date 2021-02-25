@@ -3,6 +3,7 @@ using R6Stats.Enums;
 using R6Stats.Stats.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace R6Stats.Stats
 {
@@ -35,16 +36,17 @@ namespace R6Stats.Stats
         [JsonIgnore]
         public DateTime EndDate => DateTime.Parse(_endDate);
 
-        [JsonProperty("regions")]
-        private List<RegionStat> _regions;
-
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        [JsonIgnore]
-        public IReadOnlyList<RegionStat> Regions => _regions;
+        [JsonProperty("regions")]
+        public Regions Regions { get; private set; }
     }
 
+    /// <summary>
+    /// Class containing the region infos for <see cref="SeasonalStat"/>
+    /// </summary>
+    /// <remarks>The most recent seasons contain the same information for all of the regions but the older season datas may vary between the regions</remarks>
     public class Regions
     {
         [JsonProperty("ncsa")]
@@ -54,7 +56,7 @@ namespace R6Stats.Stats
         /// Region stats for North, Central and South America
         /// </summary>
         [JsonIgnore]
-        public IReadOnlyList<RegionStat> NCSA => _ncsa;
+        public IReadOnlyDictionary<DateTime, RegionStat> NCSA => _ncsa.ToDictionary(x => x.CreatedForDate, x => x);
 
         [JsonProperty("emea")]
         private List<RegionStat> _emea;
@@ -63,7 +65,7 @@ namespace R6Stats.Stats
         /// Region stats for Europe, the Middle East and Africa
         /// </summary>
         [JsonIgnore]
-        public IReadOnlyList<RegionStat> EMEA => _emea;
+        public IReadOnlyDictionary<DateTime, RegionStat> EMEA => _emea.ToDictionary(x => x.CreatedForDate, x => x);
 
         [JsonProperty("apac")]
         private List<RegionStat> _apac;
@@ -72,7 +74,7 @@ namespace R6Stats.Stats
         /// Region stats for Asia, Pacific
         /// </summary>
         [JsonIgnore]
-        public IReadOnlyList<RegionStat> APAC => _apac;
+        public IReadOnlyDictionary<DateTime, RegionStat> APAC => _apac.ToDictionary(x => x.CreatedForDate, x => x);
     }
 
     /// <summary>
@@ -86,6 +88,7 @@ namespace R6Stats.Stats
         /// <summary>
         /// Region of this <see cref="RegionStat"/>
         /// </summary>
+        [Obsolete]
         [JsonIgnore]
         public Region Region => Enum.Parse<Region>(_region, true);
 
@@ -101,11 +104,14 @@ namespace R6Stats.Stats
         [JsonProperty("losses")]
         public int Losses { get; private set; }
 
+        [JsonProperty("max_mmr")]
+        private float _maxMmr;
+
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        [JsonProperty("max_mmr")]
-        public int MaxMMR { get; private set; }
+        [JsonIgnore]
+        public int MaxMMR => (int)_maxMmr;
 
         /// <summary>
         /// <inheritdoc/>
@@ -113,23 +119,32 @@ namespace R6Stats.Stats
         [JsonProperty("max_rank")]
         public int MaxRank { get; private set; }
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
         [JsonProperty("mmr")]
-        public int MMR { get; private set; }
+        private float _mmr;
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
+        [JsonIgnore]
+        public int MMR => (int)_mmr;
+
         [JsonProperty("next_rank_mmr")]
-        public int NextRankMMR { get; private set; }
+        private float _nextRankMmr;
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
+        [JsonIgnore]
+        public int NextRankMMR => (int)_nextRankMmr;
+
         [JsonProperty("prev_rank_mmr")]
-        public int PrevRankMMR { get; private set; }
+        private float _prevRankMmr;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [JsonIgnore]
+        public int PrevRankMMR => (int)_prevRankMmr;
 
         /// <summary>
         /// <inheritdoc/>
