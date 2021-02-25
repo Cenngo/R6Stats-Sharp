@@ -249,12 +249,12 @@ namespace R6Stats.Stats
         /// <inheritdoc/>
         /// </summary>
         [JsonIgnore]
-        public double KD => Kills / Deaths;
+        public double KD => (double)Kills / (double)Deaths;
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [JsonIgnore]
-        public double WinLose => Wins / Losses;
+        public double WinLose => (double)Wins / (double)Losses;
     }
 }
