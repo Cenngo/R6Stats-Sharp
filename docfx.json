@@ -5,7 +5,7 @@
         {
           "files": ["**/*.csproj"],
           "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": "./R6Stats-Sharp"
+          "src": "./R6Stat-Sharp"
         }
       ],
       "dest": "obj/docfx/api/dotnet",
