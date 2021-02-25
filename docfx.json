@@ -8,7 +8,7 @@
           "src": "./R6Stat-Sharp"
         }
       ],
-      "dest": "obj/docfx/api/dotnet",
+      "dest": "../_site",
       "shouldSkipMarkup": true,
       "properties": {
           "TargetFramework": "netstandard1.3"
