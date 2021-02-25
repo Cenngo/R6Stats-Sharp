@@ -14,7 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: List Folders
-      run: ls
+      run: |
+        cd ./R6Stats-Sharp
+        ls
 
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
