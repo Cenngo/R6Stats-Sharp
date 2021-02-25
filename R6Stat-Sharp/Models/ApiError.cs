@@ -3,7 +3,7 @@
 namespace R6Stats.Models
 {
     /// <summary>
-    /// Represents an API Error thrown by the <see cref="https://r6stats.com/"/> API after a bad request
+    /// Represents an API Error thrown by the <see href="https://r6stats.com/">R6 Stats API</see> after a bad request
     /// </summary>
     public class ApiError
     {
