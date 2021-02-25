@@ -55,7 +55,7 @@
       "baseurl": "https://cenngo.github.io/R6Stats-Sharp"
     },
     "template": [
-      "default"
+      "statictoc"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
