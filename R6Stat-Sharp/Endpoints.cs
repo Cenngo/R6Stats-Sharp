@@ -1,4 +1,5 @@
 ﻿using R6Stats.Enums;
+using R6Stats.Response;
 
 namespace R6Stats
 {
@@ -64,8 +65,8 @@ namespace R6Stats
         /// <summary>
         /// Method to for creating the path for a operator stat request
         /// </summary>
-        /// <param name="username">Username to be parsed</param>
         /// <param name="platform">Platform the username belongs to</param>
+        /// <param name="region">Region of the leaderboard</param>
         /// <returns>Path to send the GET request</returns>
         public static string GetLeaderboard ( Platform platform, Region region = Region.ALL ) =>
             _leaderboardBase + $"{platform.ToString().ToLower()}/{region.ToString().ToLower()}";
