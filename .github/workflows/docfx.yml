@@ -13,15 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: List Folders
-      run: |
-        cd ./R6Stat-Sharp
-        ls
 
     - uses: nikeee/docfx-action@v1.0.0
       name: Build Documentation
       with:
         args: docfx.json
+        
+    - name: List Folders
+      run: |
+        cd ./R6Stat-Sharp
+        ls
         
     - uses: maxheld83/ghpages@master
       name: Publish Documentation on GitHub Pages
