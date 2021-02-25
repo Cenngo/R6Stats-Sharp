@@ -1,4 +1,5 @@
-﻿using System;
+﻿using R6Stats.Enums;
+using System;
 using System.Collections.Generic;
 
 namespace R6Stats.Stats.Interfaces
@@ -21,6 +22,6 @@ namespace R6Stats.Stats.Interfaces
         /// <summary>
         /// Season stats with respect to the server regions
         /// </summary>
-        IReadOnlyList<RegionStat> Regions { get; }
+        Regions Regions { get; }
     }
 }
