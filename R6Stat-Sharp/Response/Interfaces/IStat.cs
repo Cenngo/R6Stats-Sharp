@@ -7,7 +7,7 @@ namespace R6Stats.Response.Interfaces
     /// Represents an api response for a username search from the <see href="https://r6stats.com/">R6Stats API</see>
     /// </summary>
     /// <remarks>
-    /// Every API request returns an <see cref="IStat"/> with the exception of <see cref="R6StatsClient.GetLeaderboard(Region)"/>, which returns a collection
+    /// Every API request returns an <see cref="IStat"/> with the exception of <see cref="R6StatsClient.GetLeaderboard(Platform, Region)"/>, which returns a collection
     /// of <see cref="IStat"/> for every player in the leaderboard.
     /// </remarks>
     public interface IStat
