@@ -10,10 +10,18 @@
         /// </summary>
         public string ApiKey { get; set; }
 
+        /// <summary>
+        /// Create a new config for <see cref="R6StatsClient"/>
+        /// </summary>
+        /// <param name="apiKey">API key needed to access the <see href="https://r6stats.com/">R6 Stats API</see></param>
         public R6StatsClientConfig ( string apiKey )
         {
             ApiKey = apiKey;
         }
+
+        /// <summary>
+        /// Create a new config for <see cref="R6StatsClient"/>
+        /// </summary>
         public R6StatsClientConfig ( ) { }
     }
 }
