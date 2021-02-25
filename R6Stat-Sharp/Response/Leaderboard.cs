@@ -55,6 +55,12 @@ namespace R6Stats.Response
         /// </summary>
         public IEnumerable<LeaderboardSlot> Top10 => _leaderboard.GetRange(0, 10);
 
+        /// <summary>
+        /// Safely search for a player in the leaderboard.
+        /// </summary>
+        /// <param name="username">Username to be searched in the leaderboard</param>
+        /// <param name="player">Stats of the searched player if the return value is <see langword="true"/></param>
+        /// <returns><see langword="true"/> if the player is present in the leaderboard, <see langword="false"/> if the player is not found</returns>
         public bool TryGetPlayer(string username, out LeaderboardSlot player )
         {
             player = _leaderboard.Find(x => string.Equals(x.Username, username, System.StringComparison.OrdinalIgnoreCase));
