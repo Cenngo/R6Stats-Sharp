@@ -2,6 +2,7 @@
 using R6Stats.Response.Interfaces;
 using R6Stats.Stats;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace R6Stats.Response
 {
@@ -16,6 +17,6 @@ namespace R6Stats.Response
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public IReadOnlyList<OperatorStat> Operators => _operators;
+        public IReadOnlyDictionary<string, OperatorStat> Operators => _operators.ToDictionary(x => x.Name.ToLower().Replace(' ', '_'), x => x);
     }
 }

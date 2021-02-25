@@ -11,6 +11,6 @@ namespace R6Stats.Response.Interfaces
         /// <summary>
         /// Stats for every weapon category
         /// </summary>
-        public IReadOnlyList<WeaponCategoryStat> WeaponCategories { get; }
+        public IReadOnlyDictionary<string, WeaponCategoryStat> WeaponCategories { get; }
     }
 }

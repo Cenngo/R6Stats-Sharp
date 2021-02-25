@@ -3,6 +3,7 @@ using R6Stats.Response.Interfaces;
 using R6Stats.Stats;
 using R6Stats.Stats.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace R6Stats.Response
 {
@@ -18,6 +19,6 @@ namespace R6Stats.Response
         /// <inheritdoc/>
         /// </summary>
         [JsonIgnore]
-        public IReadOnlyList<WeaponStat> Weapons => _weapons;
+        public IReadOnlyDictionary<string, WeaponStat> Weapons => _weapons.ToDictionary(x => x.Weapon.ToLower().Replace(' ', '_'), x => x);
     }
 }

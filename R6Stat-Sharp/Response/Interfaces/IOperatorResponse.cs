@@ -11,6 +11,6 @@ namespace R6Stats.Response.Interfaces
         /// <summary>
         /// Collection for the stats of the operators played by the user
         /// </summary>
-        IReadOnlyList<OperatorStat> Operators { get; }
+        IReadOnlyDictionary<string, OperatorStat> Operators { get; }
     }
 }
