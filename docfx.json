@@ -8,7 +8,7 @@
           "src": "./R6Stat-Sharp"
         }
       ],
-      "dest": "../_site",
+      "dest": "_site",
       "shouldSkipMarkup": true,
       "properties": {
           "TargetFramework": "netstandard1.3"
