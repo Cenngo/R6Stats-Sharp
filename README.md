@@ -21,3 +21,4 @@ var client = new R6StatsClient(config);
 which, then can be used to make the API Requests. Every API Request returns an `ApiResponse` object which contains the status of the response and the error message, if there is any, and the data payload that is the result of the said request.
 
 To learn more about the library you can check out the [wiki](https://github.com/Cenngo/R6Stats-Sharp/wiki).
+You can access the reference documentation from [here](https://cenngo.github.io/R6Stats-Sharp/api/R6Stats.html).
