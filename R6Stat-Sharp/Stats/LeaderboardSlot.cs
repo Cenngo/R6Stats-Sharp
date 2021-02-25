@@ -14,6 +14,9 @@ namespace R6Stats.Stats
         [JsonProperty("stats")]
         public LeaderboardUserStats Stats { get; private set; }
 
+        /// <summary>
+        /// Leaderboard score of a player
+        /// </summary>
         [JsonProperty("score")]
         public double Score { get; private set; }
 
