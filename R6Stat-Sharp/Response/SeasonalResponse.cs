@@ -24,7 +24,7 @@ namespace R6Stats.Response
         /// <summary>
         /// Get the ranked data from the current season
         /// </summary>'
-        /// <remarks>Returns the ranked data from any of the regions since all regions are now treated as one</remarks>
-        public IRankedData CurrentRankedData => _seasonalStats.Values.ElementAt(0).Regions.ElementAt(0);
+        /// <remarks>Returns the most recent ranked data from any of the regions since all regions are now treated as one</remarks>
+        public IRankedData CurrentRankedData => _seasonalStats.Values.ElementAt(0).Regions.NCSA.Values.First();
     }
 }
