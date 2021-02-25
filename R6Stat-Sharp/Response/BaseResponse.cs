@@ -50,7 +50,7 @@ namespace R6Stats.Response
         public string Avatar256 { get; private set; }
 
         [JsonProperty("last_updated")]
-        private string _lastUpdated { get; set; }
+        private string _lastUpdated;
 
         /// <summary>
         /// <inheritdoc/>
