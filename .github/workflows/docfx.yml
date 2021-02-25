@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: List Folders
       run: |
-        cd ./R6Stats-Sharp
+        cd ./R6Stat-Sharp
         ls
 
     - uses: nikeee/docfx-action@v1.0.0
