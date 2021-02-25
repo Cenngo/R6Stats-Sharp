@@ -10,12 +10,13 @@
     <PackageProjectUrl>https://github.com/Cenngo/R6Stats-Sharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Cenngo/R6Stats-Sharp</RepositoryUrl>
     <PackageTags>Rainbow6 Api R6Stats</PackageTags>
-    <Version>1.3.1</Version>
+    <Version>1.3.9</Version>
     <PackageId>R6Stats-Sharp</PackageId>
     <Product>R6Stats-Sharp</Product>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <PackageIcon>icon.png</PackageIcon>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>- Bug fix for seasonal stats</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
