@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "files": ["**/*.csproj", "**/*.sln"],
+          "files": ["./R6Stats-Sharp/*.csproj"],
           "exclude": [ "**/bin/**", "**/obj/**" ],
           "src": "../src"
         }
