@@ -3,9 +3,9 @@
     {
       "src": [
         {
-          "files": ["./R6Stats-Sharp/*.csproj"],
+          "files": ["**/*.csproj"],
           "exclude": [ "**/bin/**", "**/obj/**" ],
-          "src": "../src"
+          "src": "./R6Stats-Sharp"
         }
       ],
       "dest": "obj/docfx/api/dotnet",
