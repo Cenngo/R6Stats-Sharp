@@ -6,7 +6,7 @@ namespace R6Stats.Response
     /// Represents the response of an Api interaction with <see href="https://r6stats.com/">R6Stats API</see>
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class APIResponse<T> where T : IPayload
+    public sealed class APIResponse<T> where T : class, IPayload
     {
         /// <summary>
         /// Status of the Api response
