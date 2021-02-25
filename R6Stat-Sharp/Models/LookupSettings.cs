@@ -9,8 +9,9 @@ namespace R6Stat_Sharp.Models
     public class LookupSettings
     {
         public Platform PreferPlatform { get; set; } = Platform.PC;
-        public Func<IGenericResponse, bool> SearchCriteria;
-        public string[] LookForAliases { get; set; }
+        public Func<int, bool> ClearanceLevel = x => x > 0;
+        public bool SortRankAscending = true;
+        public bool SortLevelAscending = true;
         public LookupSettings ( ) { }
     }
 }
