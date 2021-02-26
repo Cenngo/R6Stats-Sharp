@@ -1,4 +1,5 @@
 ﻿using R6Stats.Response.Interfaces;
+using System;
 
 namespace R6Stats.Response
 {
