@@ -54,9 +54,7 @@
     "sitemap": {
       "baseurl": "https://cenngo.github.io/R6Stats-Sharp"
     },
-    "template": [
-      "statictoc"
-    ],
+    "template": ["default","templates/darkfx"],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
