@@ -1,5 +1,5 @@
 # R6Stats-Sharp
-C# API Client for R6Stats API
+An C# API Client for R6Stats API
 
 <a href="https://ci.appveyor.com/project/CenkErgen/r6stats-sharp">
 <img alt="AppVeyor" src="https://img.shields.io/appveyor/build/CenkErgen/r6stats-sharp?logo=appveyor&logoColor=white&style=for-the-badge">
