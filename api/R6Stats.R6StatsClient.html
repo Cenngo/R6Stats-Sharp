@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class R6StatsClient
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class R6StatsClient
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="R6Stats.R6StatsClient">
+  
+  
+  <h1 id="R6Stats_R6StatsClient" data-uid="R6Stats.R6StatsClient" class="text-break">Class R6StatsClient
+  </h1>
+  <div class="markdown level0 summary"><p>API client for parsing Rainbow6 Siege Game Data</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">R6StatsClient</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="R6Stats.html">R6Stats</a></h6>
+  <h6><strong>Assembly</strong>: R6Stat-Sharp.dll</h6>
+  <h5 id="R6Stats_R6StatsClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class R6StatsClient : IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient__ctor_R6Stats_R6StatsClientConfig_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.%23ctor(R6Stats.R6StatsClientConfig)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L34">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient__ctor_" data-uid="R6Stats.R6StatsClient.#ctor*"></a>
+  <h4 id="R6Stats_R6StatsClient__ctor_R6Stats_R6StatsClientConfig_" data-uid="R6Stats.R6StatsClient.#ctor(R6Stats.R6StatsClientConfig)">R6StatsClient(R6StatsClientConfig)</h4>
+  <div class="markdown level1 summary"><p>Create an instance of <a class="xref" href="R6Stats.R6StatsClient.html">R6StatsClient</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public R6StatsClient(R6StatsClientConfig config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="R6Stats.R6StatsClientConfig.html">R6StatsClientConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p><a class="xref" href="R6Stats.R6StatsClientConfig.html">R6StatsClientConfig</a> containing the necessary information to instanciate the client</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient__ctor_R6Stats_R6StatsClientConfig_IDictionary_System_String_IEnumerable_System_String___.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.%23ctor(R6Stats.R6StatsClientConfig%2CIDictionary%7BSystem.String%2CIEnumerable%7BSystem.String%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L59">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient__ctor_" data-uid="R6Stats.R6StatsClient.#ctor*"></a>
+  <h4 id="R6Stats_R6StatsClient__ctor_R6Stats_R6StatsClientConfig_IDictionary_System_String_IEnumerable_System_String___" data-uid="R6Stats.R6StatsClient.#ctor(R6Stats.R6StatsClientConfig,IDictionary{System.String,IEnumerable{System.String}})">R6StatsClient(R6StatsClientConfig, IDictionary&lt;String, IEnumerable&lt;String&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Create an instance of <a class="xref" href="R6Stats.R6StatsClient.html">R6StatsClient</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public R6StatsClient(R6StatsClientConfig config, IDictionary&lt;string, IEnumerable&lt;string&gt;&gt; headers)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="R6Stats.R6StatsClientConfig.html">R6StatsClientConfig</a></td>
+        <td><span class="parametername">config</span></td>
+        <td><p><a class="xref" href="R6Stats.R6StatsClientConfig.html">R6StatsClientConfig</a>Object containing the necessary information to instanciate the client</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;&gt;</td>
+        <td><span class="parametername">headers</span></td>
+        <td><p>Optional request headers to be used while making REST API requests</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_Dispose.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L147">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_Dispose_" data-uid="R6Stats.R6StatsClient.Dispose*"></a>
+  <h4 id="R6Stats_R6StatsClient_Dispose" data-uid="R6Stats.R6StatsClient.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p><inheritdoc></inheritdoc></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetGenericStats_System_String_R6Stats_Enums_Platform_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetGenericStats(System.String%2CR6Stats.Enums.Platform)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L74">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetGenericStats_" data-uid="R6Stats.R6StatsClient.GetGenericStats*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetGenericStats_System_String_R6Stats_Enums_Platform_" data-uid="R6Stats.R6StatsClient.GetGenericStats(System.String,R6Stats.Enums.Platform)">GetGenericStats(String, Platform)</h4>
+  <div class="markdown level1 summary"><p>Method for making generic data request to the API</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;GenericResponse&gt;&gt; GetGenericStats(string username, Platform platform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username the stats belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform the user plays on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.GenericResponse.html">GenericResponse</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.GenericResponse.html">GenericResponse</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="R6Stats_R6StatsClient_GetGenericStats_System_String_R6Stats_Enums_Platform__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Generic information contains the basic profile information along with some overall information about gamemode stats</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetLeaderboard_R6Stats_Enums_Platform_R6Stats_Enums_Region_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetLeaderboard(R6Stats.Enums.Platform%2CR6Stats.Enums.Region)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L123">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetLeaderboard_" data-uid="R6Stats.R6StatsClient.GetLeaderboard*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetLeaderboard_R6Stats_Enums_Platform_R6Stats_Enums_Region_" data-uid="R6Stats.R6StatsClient.GetLeaderboard(R6Stats.Enums.Platform,R6Stats.Enums.Region)">GetLeaderboard(Platform, Region)</h4>
+  <div class="markdown level1 summary"><p>Parse the current leaderboard for a region</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;Leaderboard&gt;&gt; GetLeaderboard(Platform platform, Region region = Region.ALL)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform for the leaderboard</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Region.html">Region</a></td>
+        <td><span class="parametername">region</span></td>
+        <td><p>Region of the players in the leaderboard</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.Leaderboard.html">Leaderboard</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.Leaderboard.html">Leaderboard</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetOperatorStats_System_String_R6Stats_Enums_Platform_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetOperatorStats(System.String%2CR6Stats.Enums.Platform)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L96">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetOperatorStats_" data-uid="R6Stats.R6StatsClient.GetOperatorStats*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetOperatorStats_System_String_R6Stats_Enums_Platform_" data-uid="R6Stats.R6StatsClient.GetOperatorStats(System.String,R6Stats.Enums.Platform)">GetOperatorStats(String, Platform)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;OperatorResponse&gt;&gt; GetOperatorStats(string username, Platform platform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username the stats belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform the user plays on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.OperatorResponse.html">OperatorResponse</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.OperatorResponse.html">OperatorResponse</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetSeasonalStats_System_String_R6Stats_Enums_Platform_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetSeasonalStats(System.String%2CR6Stats.Enums.Platform)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L87">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetSeasonalStats_" data-uid="R6Stats.R6StatsClient.GetSeasonalStats*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetSeasonalStats_System_String_R6Stats_Enums_Platform_" data-uid="R6Stats.R6StatsClient.GetSeasonalStats(System.String,R6Stats.Enums.Platform)">GetSeasonalStats(String, Platform)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;SeasonalResponse&gt;&gt; GetSeasonalStats(string username, Platform platform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username the stats belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform the user plays on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.SeasonalResponse.html">SeasonalResponse</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.SeasonalResponse.html">SeasonalResponse</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="R6Stats_R6StatsClient_GetSeasonalStats_System_String_R6Stats_Enums_Platform__examples">Examples</h5>
+  <p>How to get seasonal stats
+<code>var seasonal = await GetSeasonalStats(&quot;username&quot;, Platform.PC)</code></p>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetWeaponCategoryStats_System_String_R6Stats_Enums_Platform_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetWeaponCategoryStats(System.String%2CR6Stats.Enums.Platform)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L114">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetWeaponCategoryStats_" data-uid="R6Stats.R6StatsClient.GetWeaponCategoryStats*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetWeaponCategoryStats_System_String_R6Stats_Enums_Platform_" data-uid="R6Stats.R6StatsClient.GetWeaponCategoryStats(System.String,R6Stats.Enums.Platform)">GetWeaponCategoryStats(String, Platform)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;WeaponCategoryResponse&gt;&gt; GetWeaponCategoryStats(string username, Platform platform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username the stats belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform the user plays on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.WeaponCategoryResponse.html">WeaponCategoryResponse</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.WeaponCategoryResponse.html">WeaponCategoryResponse</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient_GetWeaponStats_System_String_R6Stats_Enums_Platform_.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient.GetWeaponStats(System.String%2CR6Stats.Enums.Platform)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L105">View Source</a>
+  </span>
+  <a id="R6Stats_R6StatsClient_GetWeaponStats_" data-uid="R6Stats.R6StatsClient.GetWeaponStats*"></a>
+  <h4 id="R6Stats_R6StatsClient_GetWeaponStats_System_String_R6Stats_Enums_Platform_" data-uid="R6Stats.R6StatsClient.GetWeaponStats(System.String,R6Stats.Enums.Platform)">GetWeaponStats(String, Platform)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;APIResponse&lt;WeaponsResponse&gt;&gt; GetWeaponStats(string username, Platform platform)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">username</span></td>
+        <td><p>Username the stats belongs to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="R6Stats.Enums.Platform.html">Platform</a></td>
+        <td><span class="parametername">platform</span></td>
+        <td><p>Platform the user plays on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse</a>&lt;<a class="xref" href="R6Stats.Response.WeaponsResponse.html">WeaponsResponse</a>&gt;&gt;</td>
+        <td><p><a class="xref" href="R6Stats.Response.APIResponse-1.html">APIResponse&lt;T&gt;</a> containing the request status data and a <a class="xref" href="R6Stats.Response.WeaponsResponse.html">WeaponsResponse</a> with the requested data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Cenngo/R6Stats-Sharp/new/master/apiSpec/new?filename=R6Stats_R6StatsClient.md&amp;value=---%0Auid%3A%20R6Stats.R6StatsClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Cenngo/R6Stats-Sharp/blob/master/R6Stat-Sharp/R6StatsClient.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
